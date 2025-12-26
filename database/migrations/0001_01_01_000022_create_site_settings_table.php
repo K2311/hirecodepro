@@ -1,0 +1,27 @@
+<?php
+// database/migrations/0001_01_01_000022_create_site_settings_table.php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void
+    {
+        Schema::create('site_settings', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('setting_key')->unique();
+            $table->text('setting_value')->nullable();
+            $table->string('setting_type')->default('string');
+            $table->string('category')->default('general');
+            $table->text('description')->nullable();
+            $table->boolean('is_public')->default(false);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('site_settings');
+    }
+};
