@@ -26,10 +26,14 @@
                 <p>Full-stack development services and premium code products for startups and businesses.</p>
 
                 <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-dev"></i></a>
+                    <a href="{{ \App\Models\SiteSetting::get('social_facebook', '#') }}" class="social-link"
+                        target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="{{ \App\Models\SiteSetting::get('social_twitter', '#') }}" class="social-link"
+                        target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="{{ \App\Models\SiteSetting::get('social_linkedin', '#') }}" class="social-link"
+                        target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="{{ \App\Models\SiteSetting::get('social_instagram', '#') }}" class="social-link"
+                        target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -59,11 +63,11 @@
                 <h3>Contact</h3>
                 <ul>
                     <li><i class="fas fa-envelope"></i> {{ \App\Models\SiteSetting::get('contact_email',
-                        'hello@hirecodepro.dev') }}</li>
+                        'contact@hirecadepro.com') }}</li>
                     <li><i class="fas fa-phone"></i>
-                        {{ \App\Models\SiteSetting::get('contact_phone', '+1 (555) 123-4567') }}</li>
+                        {{ \App\Models\SiteSetting::get('phone_number', '+1 (555) 000-0000') }}</li>
                     <li><i class="fas fa-map-marker-alt"></i>
-                        {{ \App\Models\SiteSetting::get('contact_address', 'San Francisco, CA') }}</li>
+                        {{ \App\Models\SiteSetting::get('business_address', 'Tech Park, Digital City') }}</li>
                 </ul>
             </div>
         </div>
