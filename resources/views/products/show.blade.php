@@ -920,7 +920,8 @@
 
                 <div class="form-group">
                     <label>Phone Number (Optional)</label>
-                    <input type="text" name="phone" class="form-input" placeholder="+1 (555) 000-0000">
+                    <input type="text" name="phone" class="form-input"
+                        placeholder="{{ \App\Models\SiteSetting::get('phone_number', '+91 0000000000') }}">
                 </div>
 
                 <div class="form-group">
@@ -995,15 +996,15 @@
                     if (data.success) {
                         // Success
                         form.innerHTML = `
-                                <div style="text-align: center; padding: 20px;">
-                                    <div style="width: 60px; height: 60px; background: var(--success-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">
-                                        <i class="fas fa-check"></i>
+                                    <div style="text-align: center; padding: 20px;">
+                                        <div style="width: 60px; height: 60px; background: var(--success-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <h3 style="margin-bottom: 10px; color: var(--text-primary);">Inquiry Sent!</h3>
+                                        <p style="color: var(--text-secondary);">${data.message}</p>
+                                        <button type="button" class="cta-button-v3" style="margin-top: 25px;" onclick="closeInquiryModal()">Close</button>
                                     </div>
-                                    <h3 style="margin-bottom: 10px; color: var(--text-primary);">Inquiry Sent!</h3>
-                                    <p style="color: var(--text-secondary);">${data.message}</p>
-                                    <button type="button" class="cta-button-v3" style="margin-top: 25px;" onclick="closeInquiryModal()">Close</button>
-                                </div>
-                            `;
+                                `;
                     } else {
                         // Validation Errors
                         let errorMsg = 'Please fix the following errors:\n';

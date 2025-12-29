@@ -62,12 +62,13 @@
             <div class="footer-column">
                 <h3>Contact</h3>
                 <ul>
-                    <li><i class="fas fa-envelope"></i> {{ \App\Models\SiteSetting::get('contact_email',
-                        'contact@hirecadepro.com') }}</li>
+                    <li><i class="fas fa-envelope"></i> {{ \App\Models\SiteSetting::get('support_email',
+                        'support@codecraftstudio.com') }}</li>
                     <li><i class="fas fa-phone"></i>
-                        {{ \App\Models\SiteSetting::get('phone_number', '+1 (555) 000-0000') }}</li>
+                        {{ \App\Models\SiteSetting::get('phone_number', '+91 0000000000') }}</li>
                     <li><i class="fas fa-map-marker-alt"></i>
-                        {{ \App\Models\SiteSetting::get('business_address', 'Tech Park, Digital City') }}</li>
+                        {{ \App\Models\SiteSetting::get('business_address', '123 Tech Blvd, San Francisco, CA 94105') }}
+                    </li>
                 </ul>
             </div>
         </div>
